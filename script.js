@@ -34,7 +34,7 @@ $(document).ready(function(){
         loop:true
     })
     var typed =new Typed(".typing-2",{
-        strings: ["Computer Science Engineer","YouTuber", "Developer", "Blogger", "Designer", "Gamer"],
+        strings: ["Circuit Design","Fault recognising", "Digital circuits"],
         typeSpeed: 100,
         backSpeed:60,
         loop:true
