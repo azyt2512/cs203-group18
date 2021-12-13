@@ -28,7 +28,7 @@ $(document).ready(function(){
 
     //typing Animation Script
     var typed =new Typed(".typing",{
-        strings: ["Jyoti Suman","Ajit Panigrahi", "Sahil Kumar", "Gyanaballav", "Vishal Kumar", "Gamer"],
+        strings: ["Jyoti Suman","Ajit Panigrahi", "Sahil Kumar", "Gyanaballav", "Vishal Kumar"],
         typeSpeed: 100,
         backSpeed:60,
         loop:true
