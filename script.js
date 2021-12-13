@@ -63,21 +63,21 @@ $(document).ready(function(){
     });
 
     // Opening profile url of individual
-    function jyoti() {
-        window.open(
-          "https://github.com/JyotiSuman09", "_blank");
-    }
-    function ajit() {
-        window.open(
-          "https://github.com/ajitpani", "_blank");
-    }function sahil() {
-        window.open(
-          "https://github.com/sahilkumar420", "_blank");
-    }function gyana() {
-        window.open(
-          "https://github.com/GYANABALLAV", "_blank");
-    }function vishal() {
-        window.open(
-          "https://github.com/Vishal", "_blank");
-    }
+    // function jyoti() {
+    //     window.open(
+    //       "https://github.com/JyotiSuman09", "_blank");
+    // }
+    // function ajit() {
+    //     window.open(
+    //       "https://github.com/ajitpani", "_blank");
+    // }function sahil() {
+    //     window.open(
+    //       "https://github.com/sahilkumar420", "_blank");
+    // }function gyana() {
+    //     window.open(
+    //       "https://github.com/GYANABALLAV", "_blank");
+    // }function vishal() {
+    //     window.open(
+    //       "https://github.com/Vishal", "_blank");
+    // }
 });
