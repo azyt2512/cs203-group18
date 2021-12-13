@@ -97,7 +97,7 @@
 /* Home section styling */
 .home{
     display: flex;
-    background: url("images/banner-03.jpg") no-repeat center;
+    background: url("images/dgc.jpg") no-repeat center;
     background-size: cover;
     background-attachment: fixed;
     /* background: black; */
