@@ -391,6 +391,12 @@ section .title::after{
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
+.teams .carousel .card .text9{
+    color: crimson;
+}
+.teams .carousel .card:hover .text9{
+    color: #fff;
+}
 .teams .carousel .card img{
     height: 150px;
     width: 150px;
