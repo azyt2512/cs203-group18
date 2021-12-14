@@ -199,7 +199,7 @@ section .title::after{
 
 /* About Section Styling */
 .about .title::after{
-    content: "who is it";
+    content: "what is it";
 }
 .about .about-content .left{
     width: 45%;
