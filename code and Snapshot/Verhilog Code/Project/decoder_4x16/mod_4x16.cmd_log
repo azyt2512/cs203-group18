@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/ise/Desktop/Project/decoder_4x16/mod_4x16.xst" -ofn "/home/ise/Desktop/Project/decoder_4x16/mod_4x16.syr" 
