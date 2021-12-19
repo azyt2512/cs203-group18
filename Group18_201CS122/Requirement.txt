@@ -5,3 +5,5 @@ Virtual Box
 2. For HTML File : HTML Viewer Google chrome browser
 Compatibility: 1GB free RAM
 	       50GB free storage for the installation of Xilinx	
+3.Safari browser - for macos
+  Brave, Mozilla, Chrome -for other os latest updated to 2019 and after

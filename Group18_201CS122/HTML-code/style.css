@@ -629,6 +629,9 @@ footer span a:hover{
     .home .max-width{
         margin-left: 0;
     }
+    .skills .skills-content .right img{
+        width: 450px!important;
+    }
 }
 @media (max-width: 1104px){
     .about .about-content .left img{
