@@ -317,6 +317,86 @@ section .title::after{
     color: crimson;
     background: none;
 }
+.skills .skills-content .left .like{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.skills .skills-content .left .like label{
+    position: relative;
+    height: 80px;
+    width: 160px;
+    cursor: pointer;
+}
+.skills .skills-content .left .like label  input{
+    appearance: none;
+    position: relative;
+    z-index: 1;
+}
+.skills .skills-content .left .like span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fe0000;
+    box-shadow: 0 15px 25px #fe000066;
+    border-radius: 80px;
+    transition: 0.5s;
+}
+.skills .skills-content .left .like label input:checked~ span{
+    background: #05be05;
+    box-shadow: 0 15px 25px #05be0566;
+}
+.skills .skills-content .left .like span i{
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 72px;
+    height: 72px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.skills .skills-content .left .like label input:checked~ span i{
+    left: 84px;
+}
+.skills .skills-content .left .like span i::before{
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 12px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fe0000;
+    box-shadow: 35px 0 0 #fe0000;
+    transition: 0.5s;
+}
+.skills .skills-content .left .like label input:checked~ span i::before{
+    background: #05be05;
+    box-shadow: 35px 0 0 #05be05;
+}
+.skills .skills-content .left .like span i::after{
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    left: calc(50% - 15px);
+    width: 30px;
+    height: 6px;
+    border-radius: 6px;
+    background: #fe0000;
+    transition: 0.5s;
+}
+.skills .skills-content .left .like label input:checked~ span i::after{
+    bottom: 12px;
+    height: 15px;
+    border-radius: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: #05be05;
+}
+
+
 .skills .skills-content .right .bars{
     margin-bottom: 15px;
 }
