@@ -26,6 +26,7 @@ $(document).ready(function(){
         $('.menu-btn i').toggleClass("active");
     });
 
+    
     //typing Animation Script
     var typed =new Typed(".typing",{
         strings: ["Jyoti Suman","Ajit Panigrahi", "Sahil Kumar", "Gyanaballav", "Vishal Kumar"],
@@ -39,7 +40,7 @@ $(document).ready(function(){
         backSpeed:60,
         loop:true
     })
-
+    
     //owl carousel script
     $('.carousel').owlCarousel({
         margin:20,
@@ -62,3 +63,7 @@ $(document).ready(function(){
         }
     });
 });
+//Alert message
+function gitlink() {
+    alert("Source file is shared of can be found at https://github.com/JyotiSuman09/cs203-group18");
+  }
