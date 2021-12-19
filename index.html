@@ -115,7 +115,7 @@
                     <div class="box">
                         <i class="fas fa-code"></i>
                         <div class="text">Fault finding</div>
-                        <p>Observing the input & outputfor the given circuit. Analyse of data taken in form of Truth table and compared with a normal TT to make our work easy</p>
+                        <p>Generating the minimised test set using equivalence and dominance law and comparing the faulty outputs with expected truth table</p>
                         <p>Click here For details</p>
                     </div>
                 </div>
@@ -130,20 +130,27 @@
             <div class="skills-content">
                 <div class="column left">
                     <div class="text">Conclusion about the Project</div>
-                    <p>&emsp; The very first method to fault modelling methodology
-                        has used a validation test sets to generate test
-                        sequence that have good stuck-at fault coverage for
-                        RTL circuits.This method results in very small test
-                        generation times. After this method,RTL-ATPG
-                        algorithm was presented to generate test vectors for
-                        single clock functional RTL design.Thealgorithm
-                        uses a data structure called ADD. But here in this
-                        paper concept of textio is used to detect the stuck-at
-                        fault in RTL circuit.Also, this method results in easier
-                        estimation of fault coverage.This leads to the better
-                        efficiency of this method than previously used
-                        methods of fault coverage in RTL circuits.
-                    </p>
+                    <p>&emsp; A fault diagnosis system at its best must be able to not only detect the presence and isolate the location of faults in a system but also identify them (i.e., estimate their severities) once they are detected and isolated. Hence, a diagnostic system is also equivalently called a fault detection, isolation, and identification (FDII) system. </p>
+                    <p>&emsp; In this project we have found the stuck 
+                        at 1 fault in 4*16 decoder constructed 
+                        with two 3*8 decoders. As there are 
+                        different levels of abstraction of fault 
+                        modeling, the stuck at fault model 
+                        comes under structural level fault 
+                        model. And for our experiment we have 
+                        used single stuck at fault modeling to 
+                        find the fault. There are some advantages 
+                        of using single stuck at fault model like -
+                        Due to simplicity of single stuck at model it 
+                        has been widely used to taste ICs ,Some 
+                        interesting results that A test set that 
+                        detect all single stuck at fault detect about 
+                        >95% of multiple stuck at fault , For tree like 
+                        circuit it detects all multiple stuck at faults.
+                        since this method results in easier 
+                        estimation of fault coverage. This leads 
+                        to better efficiency of this method than 
+                        other methods of fault coverage.</p>
                     <!-- <a href="#">Read More</a> -->
                     <div class="like">
                     <label>
@@ -259,7 +266,7 @@
                             <input type="text" placeholder="Subject">
                         </div>
                         <div class="field textarea">
-                            <textarea placeholder="Describe project..."></textarea>
+                            <textarea placeholder="Any comments"></textarea>
                         </div>
                         <div class="button">
                             <button type="submit">Send Message</button>
