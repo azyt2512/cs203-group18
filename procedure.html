@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fault finding</title>
+    <title>Procedure</title>
     <link rel = "icon" href ="images/18_icon_A_(Hungary).svg" type = "image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/25ec9fc0e1.js"crossorigin="anonymous"></script>
@@ -57,7 +57,7 @@
           <ul class="menu">
               <li><a href="index.html#home">Home</a></li>
               <li><a href="index.html#about">Intro</a></li>
-              <li><a href="index.html#services">Procedure</a></li>
+              <li><a href="index.html#services">Report</a></li>
               <li><a href="index.html#skills">Conclusion</a></li>
               <li><a href="index.html#teams">Teams</a></li>
               <li><a href="index.html#contact">Contacts</a></li>
@@ -71,17 +71,52 @@
       <section class="fault" id="fault">
           <div class="max-width">
             <div class="box">
-                <center><h1>How to find faults</h1></center>
-                <p>As our project is on the topic Stuck at Fault 1 in 4x16 decoder so we will compare the truth table of faulty decoder with actual truth table of 4x16 decoder.</p>
-                <center><img src="images/normalTT.jpeg" alt="Normal Correct Truth Table"></center>
-                <center><h2>Figure: Truth Table of Decoder </h2></center>
-                <p>Considering all possible position(including fanout branches and output lines) there are total 29 positions where stuck at fault may occur.</p>
-                <p>  As Single Stuck at Fault model consider single fault at single position at a time.</p>
-                <p>So for example let us assume we have truth table for faulty decoder getting as:</p>
-                <center><img src="images/faultyTT.jpeg" alt="Normal Correct Truth Table"></center>
-                <center><h2>Figure: Truth Table of Faulty Decoder </h2></center>
-                <p>  So here we can see for input 1000,1001,1100, 1101 output mismatches with the actual truth table.</p>
-                <p style="margin-bottom: 20px;">Similarly for all 29 positions we will have 29 separate test sets but applying the law of fault equivalence and law of fault dominance we can minimize the test set which can detect all faults.</p>
+                <center><h1>How to do perform simulations</h1></center>
+                <p style="font-weight: bold;">Procedure</p>
+                <center><p style="font-size: 25px;">PROCEDURE FOR RUNNING THE XILING SIMULATION</p></center>
+                <p>The verhilog code for written 4x16 decoder using two 3x8 decoder using enable.</p>
+                <p>We had done it using module instantiations of the verhilog code i.e., we had written the verhilog code for a 3x8 decoder then we use the copy of this module in 4x16 decoder.</p>
+                <p>Steps to view the RTL view of the circuit:</p>
+                <p>step 1: In Xilinx to view the RTL view of the circuit, Click on the “Implementational” part of the code.</p>
+                <p>step 2: Then click on “Synthesize-XST” to run it. After that, click on “view RTL Schematic”.</p>
+                <p>Steps to see the timing diagram and for the simulation of the code:</p>
+                <p>Step 1:
+                    Click on the simulate part of the Xilinx</p>
+                <p>Step 2:
+                    Now select the  file which you want to simulate.</p>
+                <p>Step 3:
+                    Now create the test case file for the code.</p>
+                <p>Step 4:
+                    Now click on “Behavioural check System” to simulate it.</p>
+                <p>Step 5:
+                    After it gets completed, now click on “simulate Behavioural..”</p>
+                <p>Step 6:
+                    Now the timing diagram will appear.</p>
+                <p>Step 7:
+                    First applying the test benches, we get the correct output set for 4x16 decoder</p>
+                <p>Step 8:
+                    To forcefully make a line stuck at 1 we will insert an OR gate at that position through our Verilog code. Then the line behave as stuck at 1 fault.</p>
+                <p>Step 9:
+                    Now again applying the test bench we will get the output of the faulty decoder.</p>
+                <p>Step 10:
+                    Now we will compare both the output set.</p>
+                <p>If the output of expected and actual truth table mismatches for the same input then that input set will be the test set of the corresponding fault position.</p>
+                <center><img src="images/timeg1.jpeg" alt=""></center>
+                <center><p>Figure: Normal timing diagram of the clock wise input.</p></center>
+                <center><img src="images/timeg2.jpeg" alt=""></center>
+                <center><p>Figure: Timing Diagram when Input Z is forced to 1</p></center>
+                <p style="margin-bottom: 40px;"></p>
+                <center><p style="font-size: 25px;">PROCEDURE TO SIMULATE IN WEBSITE</p></center>
+                <p>Step 1: First on the VCC.</p>
+                    <p>(As the circuit in the simulation is faulty one based on single stuck at 1 fault model, so u will get unusual result)</p>
+                <p>Step 2: Click on the “input” button to give the input.</p>
+                <p> &emsp;&emsp;&emsp; Green-(Input 1)</p>
+                <p> &emsp;&emsp;&emsp; Red  -(Input 0)</p>
+                <p>Step 3: After selecting input value, you will get the corresponding faulty output, to add the result in the truth table click on “ADD” button.</p>
+                <p>Step 4: Repeat 2 and 3 to get all the faulty output at the current fault position.</p>
+                <p>Step 5: Now compare it with the real truth table and try to get the fault position.</p>
+                <p>Step 6: To change the fault position, click on “Change fault position”</p>
+
             </div>
           </div>
       </section>
