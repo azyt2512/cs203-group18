@@ -57,7 +57,7 @@
           <ul class="menu">
               <li><a href="index.html#home">Home</a></li>
               <li><a href="index.html#about">Intro</a></li>
-              <li><a href="index.html#services">Report</a></li>
+              <li><a href="index.html#services">Procedure</a></li>
               <li><a href="index.html#skills">Conclusion</a></li>
               <li><a href="index.html#teams">Teams</a></li>
               <li><a href="index.html#contact">Contacts</a></li>
@@ -81,29 +81,10 @@
                 <center><img src="images/faultyTT.jpeg" alt="Normal Correct Truth Table"></center>
                 <center><h2>Figure: Truth Table of Faulty Decoder </h2></center>
                 <p>  So here we can see for input 1000,1001,1100, 1101 output mismatches with the actual truth table.</p>
-                <p>Similarly for all 29 positions we will have 29 separate test sets but applying the law of fault equivalence and law of fault dominance we can minimize the test set which can detect all faults.</p>
-                <p>&emsp;While doing the project we find the following test cases:</p>
-                <p>As we have to check the Stuck at 1 fault in 4x16 decoder, the circuit diagram is as follows:</p>
-                <center><img src="images/decoder2.jpeg" alt=""></center>
-                <p>As you can see in the figure, we have total 29 possible cases where stuck at 1 fault can be assumed. So, below are the test sets for which output mismatches with the expected output, for corresponding fault positions:</p>
-                <center><img src="images/urgent_1.png" alt=""></center>
-                <p>1. Test set for position 4,8 and 12 are same. So, among these 3 positions, two of the positions can be eliminated by applying law of fault equivalence.</p>
-                <p>2. Test sets for positions 22-29 contain the test sets for position 4 as its subset. So, applying law of fault dominance we can consider the test sets for position 4 as the test sets for these (22-29) positions.</p>
-                <p>3. Similarly, the test sets for position 14-21 contains the test sets for position 13. So, applying law of fault dominance we can consider the test sets for position 13 as the test sets for these (14-21) positions.</p>
-                <p>4. Using law of dominance:</p>
-                <p>&emsp;Comparing test sets of position 1 and 5, position 5 will dominate.</p>
-                <p>&emsp;Comparing test sets of position 2 and 6, position 6 will dominate.</p>
-                <p>&emsp;Comparing test sets of position 3 and 7, position 7 will dominate.</p>
-                <p>&emsp;Comparing test sets of position 1 and 9, position 9 will dominate.</p>
-                <p>&emsp;Comparing test sets of position 2 and 10, position 10 will dominate.</p>
-                <p>&emsp;Comparing test sets of position 3 and 11, position 11 will dominate.</p>
-                <p>5. Repeatedly applying law of dominance, we get the reduced test set as:</p>
-                <p style="margin-bottom: 30px;">&emsp;{0000,0011,0101,0110,1000,1011,1101,1110}.</p>
+                <p style="margin-bottom: 20px;">Similarly for all 29 positions we will have 29 separate test sets but applying the law of fault equivalence and law of fault dominance we can minimize the test set which can detect all faults.</p>
             </div>
           </div>
       </section>
-
-
     <!-- Footer Section Start  -->
     <footer>
         <span>Made with <span class="fas fa-heart"></span> by <a href="#">SNOW</a> | <span class="far fa-copyright"></span> 2021 All rights reserved.</span>

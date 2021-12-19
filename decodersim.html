@@ -6,13 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decoder Simulation</title>
     <link rel = "icon" href ="images/18_icon_A_(Hungary).svg" type = "image/x-icon">
+    <script src="https://kit.fontawesome.com/25ec9fc0e1.js"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <style>.navbar .max-width .logo a, .navbar .max-width .menu li a{
-        color: black;
-    }
-    .navbar .max-width .menu li a:hover{
-        color: crimson;
-    }
+    <style>
     .decoder .max-width .box{
         /* background-color: rebeccapurple; */
         border: 3px solid black;
@@ -31,30 +27,51 @@
     center{
         padding: 20px 0 20px 0;
     }
-    .mux {
+    .navbar .max-width .logo a{
+            color: black;
+    }
+    .sticky .max-width .logo a{
+            color: #fff;
+    }
+    .navbar .max-width ul li a{
+            color: black;
+    }
+    .sticky .max-width ul li a{
+            color: #fff;
+    }
+    .mux{
             text-align: center;
             border: 2px solid;
             padding-top: 42spx;
             width: 100px;
             height:155px;
             background-color: rgb(82, 82, 238);
-        }
-        .gate{
+    }
+    .gate{
             margin-top: 106px;
             height: 352px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-        }
-        .circuit{
+    }
+    .ng{
+            top:-693px;
+            position: relative;
+            z-index: 1;
+    }
+    .ng img{
+            height: 27px;
+            width: 43px;
+    }
+    .circuit{
             margin: auto;
             text-align: center;
             display: flex;
             justify-content: center;
             align-items:center ;
             margin-top: -453px;
-        }
-         .btn{
+    }
+    .btn{
            display: flex;
            flex-direction: column-reverse;
            margin-top: -63px;
@@ -62,19 +79,19 @@
            height: 160px;
            justify-content: space-between;
            align-items: flex-end;
-        } 
-        button{
+    } 
+    button{
             float: left;
             width: 33px;
             height: 20px;
             
-        }
-        #vcc{
+    }
+    #vcc{
             width: 43px;
             height: 30px;
             margin-top: 13spx;
-        }
-        .wires{
+    }
+    .wires{
             height: 360px;
             width: 138px;
             display: flex;
@@ -86,10 +103,10 @@
             align-items: flex-end;
             position: relative;
             z-index: 1;
-        }
-        .hwires{
+    }
+    .hwires{
             width: 149px;
-            height: 360px;
+            height: 335px;
             top: -354px;
             position: relative;
             z-index: 2;
@@ -97,8 +114,8 @@
             flex-direction:  row-reverse;
             justify-content: space-between;
             padding: 0px 31px;
-        }
-        .wire {
+    }
+    .wire {
             margin: 14px 0px;
             width: 138px;
             height: 3px;
@@ -106,10 +123,10 @@
             background-image: repeating-linear-gradient(60deg,transparent 10px,#87530f 15px);
             /* margin-top: 300px; */
             
-        }
+    }
     
 
-        .out{
+    .out{
             list-style: none;
             display: flex;
             flex-direction: column;
@@ -119,8 +136,8 @@
             justify-content: space-between;
             align-items: flex-end;
             
-        }
-        .owires{
+    }
+    .owires{
             height: 365px;
             width: 96px;
             display: flex;
@@ -129,7 +146,7 @@
             /* overflow: auto; */
             margin-top: 116px;
             flex-shrink: 10;
-        }
+    }
         .owire{
             
             margin: 8.8px 0px;
@@ -137,11 +154,8 @@
             height: 3px;
             background-color: black;
             background-image: repeating-linear-gradient(60deg,transparent 10px,#87530f 15px);
-        }
-        /* .ogape{
-            margin: 11px 0px;
-        } */
-        .out li{
+    }
+    .out li{
             font-size: 9.8px;
             border: 2px solid;
             height: 19px;
@@ -150,45 +164,45 @@
             padding-top: 3px;
             border-radius: 10px;
             margin-top: 2px;
-        }
-        .ttable{
+    }
+    .ttable{
             display: flex;
             margin: 20px 0px ;
             flex-direction: column;
             height: auto;
             margin: auto;
-        }
-        .xbutts{
+    }
+    .xbutts{
             margin: 10px 341px;
             display: flex;
             flex-direction:  row-reverse;
             justify-content: space-between;
-        }
-        .faulty{
+    }
+    .faulty{
             border: 2px solid;
             width: 575px;
             height: auto;
             margin: 10px 280px;
-        }
-        .xbutts button{
+    }
+    .xbutts button{
             background-color: rgb(221, 92, 118);
             /* padding: 9px; */
             font-weight: bold;
             text-align: center;
-        }
-        .faulty tr{
+    }
+    .faulty tr{
             /* display: flex; */
             /* flex-direction: row; */
             justify-content: space-between;
-        }
+    }
         
 </style>
 </head>
 <body>
-    <div class="scroll-up-btn">
-        <i class="fas fa-angle-up"></i>
+    <div class="scroll-up-btn" id="myBtn" onclick="moveUp();">
+        <i style="display: inline;"!important class="fas fa-angle-up"></i>
     </div>
-    <nav class="navbar">
+    <nav class="navbar" id="Nav">
         <div class="max-width">
           <div class="logo">
             <a href="#">CS203 Group<span>18.</span></a>
@@ -233,12 +247,15 @@
                       <div class="wire" style="width: 51px;"> </div>
                       <div class="wire" style="width: 23px;"> </div>
                   </div>   
-                      <div class="hwires">
-                         <div class="wire" style="width: 3px; height: 196px; margin-top: 101px;"> </div>
-                         <div class="wire" style="width: 3px; height: 196px; margin-top: 70px;"> </div>
-                         <div class="wire" style="width: 3px; height: 196px; margin-top: 40px;"> </div>
-                         <div class="wire" style="width: 3px; height: 196px; margin-top: 10px;"> </div>
-                      </div>
+                    <div class="hwires">
+                    <div class="wire" style="width: 3px; height: 196px; margin-top: 101px;"> </div>
+                    <div class="wire" style="width: 3px; height: 196px; margin-top: 70px;"> </div>
+                    <div class="wire" style="width: 3px; height: 196px; margin-top: 40px;"> </div>
+                    <div class="wire" style="width: 3px; height: 196px; margin-top: 10px;"> </div>
+                    </div>
+                    <div class="ng">
+                    <img src="images/not-gate-hi.png" alt="notgate">
+                    </div>
                   </div>
                   <div class="gate">
                   <div class="mux">
@@ -333,8 +350,32 @@
       <footer>
         <span>Made with <span class="fas fa-heart"></span> by <a href="#">SNOW</a> | <span class="far fa-copyright"></span> 2021 All rights reserved.</span>
     </footer>
+    <script src="script.js"></script>
 </body>
 <script>
+       
+        //Get the button:
+        mybutton = document.getElementById("myBtn");
+        myNav = document.getElementById("Nav");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.classList.add('show')
+        myNav.classList.add('sticky')
+        } else {
+            mybutton.classList.remove('show')
+            myNav.classList.remove('sticky')
+        }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        function moveUp() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
    let flt_pos= 3;
    let tot_rows=0;
    function em_tab()
