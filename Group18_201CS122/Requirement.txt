@@ -1,0 +1,7 @@
+App requirement:
+1. For Simulation of verilog code:
+Xilinx ISE Suit
+Virtual Box
+2. For HTML File : HTML Viewer Google chrome browser
+Compatibility: 1GB free RAM
+	       50GB free storage for the installation of Xilinx	

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/ise/Desktop/Project/decoder_3x8/mod_3x8_isim_beh.exe" -prj "/home/ise/Desktop/Project/decoder_3x8/mod_3x8_beh.prj" "work.mod_3x8" "work.glbl" 

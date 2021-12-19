@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fault finding</title>
+    <link rel = "icon" href ="images/18_icon_A_(Hungary).svg" type = "image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/25ec9fc0e1.js"crossorigin="anonymous"></script>
+    <style>
+    .fault .max-width .box{
+        /* background-color: rebeccapurple; */
+        border: 3px solid black;
+        border-radius: 8px;
+        box-shadow: 10px 14px 10px grey; 
+    }
+    .fault .max-width .box h1{
+        font-size: 35px;
+        width: 100%;
+    }
+    .fault .max-width .box p{
+        font-size: 22px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .fault .max-width .box img{
+        width: 1000px;
+        object-fit: contain;
+    }
+    center{
+        padding: 20px 0 20px 0;
+    }
+    .navbar .max-width .logo a{
+            color: black;
+    }
+    .sticky .max-width .logo a{
+            color: #fff;
+    }
+    .navbar .max-width ul li a{
+            color: black;
+    }
+    .sticky .max-width ul li a{
+            color: #fff;
+    }
+</style>
+</head>
+<body>
+    <div class="scroll-up-btn" id="myBtn" onclick="moveUp();">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar" id="Nav">
+        <div class="max-width">
+          <div class="logo">
+            <a href="#">CS203 Group<span>18.</span></a>
+          </div>
+          <ul class="menu">
+              <li><a href="index.html#home">Home</a></li>
+              <li><a href="index.html#about">Intro</a></li>
+              <li><a href="index.html#services">Report</a></li>
+              <li><a href="index.html#skills">Conclusion</a></li>
+              <li><a href="index.html#teams">Teams</a></li>
+              <li><a href="index.html#contact">Contacts</a></li>
+          </ul>
+          <div class="menu-btn">
+              <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+
+      <section class="fault" id="fault">
+          <div class="max-width">
+            <div class="box">
+                <center><h1>How to find faults</h1></center>
+                <p>As our project is on the topic Stuck at Fault 1 in 4x16 decoder so we will compare the truth table of faulty decoder with actual truth table of 4x16 decoder.</p>
+                <center><img src="images/normalTT.jpeg" alt="Normal Correct Truth Table"></center>
+                <center><h2>Figure: Truth Table of Decoder </h2></center>
+                <p>Considering all possible position(including fanout branches and output lines) there are total 29 positions where stuck at fault may occur.</p>
+                <p>  As Single Stuck at Fault model consider single fault at single position at a time.</p>
+                <p>So for example let us assume we have truth table for faulty decoder getting as:</p>
+                <center><img src="images/faultyTT.jpeg" alt="Normal Correct Truth Table"></center>
+                <center><h2>Figure: Truth Table of Faulty Decoder </h2></center>
+                <p>  So here we can see for input 1000,1001,1100, 1101 output mismatches with the actual truth table.</p>
+                <p>Similarly for all 29 positions we will have 29 separate test sets but applying the law of fault equivalence and law of fault dominance we can minimize the test set which can detect all faults.</p>
+                <p>&emsp;While doing the project we find the following test cases:</p>
+                <p>As we have to check the Stuck at 1 fault in 4x16 decoder, the circuit diagram is as follows:</p>
+                <center><img src="images/decoder2.jpeg" alt=""></center>
+                <p>As you can see in the figure, we have total 29 possible cases where stuck at 1 fault can be assumed. So, below are the test sets for which output mismatches with the expected output, for corresponding fault positions:</p>
+                <center><img src="images/urgent_1.png" alt=""></center>
+                <p>1. Test set for position 4,8 and 12 are same. So, among these 3 positions, two of the positions can be eliminated by applying law of fault equivalence.</p>
+                <p>2. Test sets for positions 22-29 contain the test sets for position 4 as its subset. So, applying law of fault dominance we can consider the test sets for position 4 as the test sets for these (22-29) positions.</p>
+                <p>3. Similarly, the test sets for position 14-21 contains the test sets for position 13. So, applying law of fault dominance we can consider the test sets for position 13 as the test sets for these (14-21) positions.</p>
+                <p>4. Using law of dominance:</p>
+                <p>&emsp;Comparing test sets of position 1 and 5, position 5 will dominate.</p>
+                <p>&emsp;Comparing test sets of position 2 and 6, position 6 will dominate.</p>
+                <p>&emsp;Comparing test sets of position 3 and 7, position 7 will dominate.</p>
+                <p>&emsp;Comparing test sets of position 1 and 9, position 9 will dominate.</p>
+                <p>&emsp;Comparing test sets of position 2 and 10, position 10 will dominate.</p>
+                <p>&emsp;Comparing test sets of position 3 and 11, position 11 will dominate.</p>
+                <p>5. Repeatedly applying law of dominance, we get the reduced test set as:</p>
+                <p style="margin-bottom: 30px;">&emsp;{0000,0011,0101,0110,1000,1011,1101,1110}.</p>
+            </div>
+          </div>
+      </section>
+
+
+    <!-- Footer Section Start  -->
+    <footer>
+        <span>Made with <span class="fas fa-heart"></span> by <a href="#">SNOW</a> | <span class="far fa-copyright"></span> 2021 All rights reserved.</span>
+    </footer>
+    
+    <script>
+        //Get the button:
+        mybutton = document.getElementById("myBtn");
+        myNav = document.getElementById("Nav");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.classList.add('show')
+        myNav.classList.add('sticky')
+        } else {
+            mybutton.classList.remove('show')
+            myNav.classList.remove('sticky')
+        }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        function moveUp() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+</body>
+</html>

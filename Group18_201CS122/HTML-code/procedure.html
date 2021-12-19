@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedure</title>
+    <link rel = "icon" href ="images/18_icon_A_(Hungary).svg" type = "image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/25ec9fc0e1.js"crossorigin="anonymous"></script>
+    <style>
+    .fault .max-width .box{
+        /* background-color: rebeccapurple; */
+        border: 3px solid black;
+        border-radius: 8px;
+        box-shadow: 10px 14px 10px grey; 
+    }
+    .fault .max-width .box h1{
+        font-size: 35px;
+        width: 100%;
+    }
+    .fault .max-width .box p{
+        font-size: 22px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .fault .max-width .box img{
+        width: 1000px;
+        object-fit: contain;
+    }
+    center{
+        padding: 20px 0 20px 0;
+    }
+    .navbar .max-width .logo a{
+            color: black;
+    }
+    .sticky .max-width .logo a{
+            color: #fff;
+    }
+    .navbar .max-width ul li a{
+            color: black;
+    }
+    .sticky .max-width ul li a{
+            color: #fff;
+    }
+</style>
+</head>
+<body>
+    <div class="scroll-up-btn" id="myBtn" onclick="moveUp();">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar" id="Nav">
+        <div class="max-width">
+          <div class="logo">
+            <a href="#">CS203 Group<span>18.</span></a>
+          </div>
+          <ul class="menu">
+              <li><a href="index.html#home">Home</a></li>
+              <li><a href="index.html#about">Intro</a></li>
+              <li><a href="index.html#services">Report</a></li>
+              <li><a href="index.html#skills">Conclusion</a></li>
+              <li><a href="index.html#teams">Teams</a></li>
+              <li><a href="index.html#contact">Contacts</a></li>
+          </ul>
+          <div class="menu-btn">
+              <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+
+      <section class="fault" id="fault">
+          <div class="max-width">
+            <div class="box">
+                <center><h1>How to do perform simulations</h1></center>
+                <p style="font-weight: bold;">Procedure</p>
+                <center><p style="font-size: 25px;">PROCEDURE FOR RUNNING THE XILING SIMULATION</p></center>
+                <p>The verhilog code for written 4x16 decoder using two 3x8 decoder using enable.</p>
+                <p>We had done it using module instantiations of the verhilog code i.e., we had written the verhilog code for a 3x8 decoder then we use the copy of this module in 4x16 decoder.</p>
+                <p>Steps to view the RTL view of the circuit:</p>
+                <p>step 1: In Xilinx to view the RTL view of the circuit, Click on the “Implementational” part of the code.</p>
+                <p>step 2: Then click on “Synthesize-XST” to run it. After that, click on “view RTL Schematic”.</p>
+                <p>Steps to see the timing diagram and for the simulation of the code:</p>
+                <p>Step 1:
+                    Click on the simulate part of the Xilinx</p>
+                <p>Step 2:
+                    Now select the  file which you want to simulate.</p>
+                <p>Step 3:
+                    Now create the test case file for the code.</p>
+                <p>Step 4:
+                    Now click on “Behavioural check System” to simulate it.</p>
+                <p>Step 5:
+                    After it gets completed, now click on “simulate Behavioural..”</p>
+                <p>Step 6:
+                    Now the timing diagram will appear.</p>
+                <p>Step 7:
+                    First applying the test benches, we get the correct output set for 4x16 decoder</p>
+                <p>Step 8:
+                    To forcefully make a line stuck at 1 we will insert an OR gate at that position through our Verilog code. Then the line behave as stuck at 1 fault.</p>
+                <p>Step 9:
+                    Now again applying the test bench we will get the output of the faulty decoder.</p>
+                <p>Step 10:
+                    Now we will compare both the output set.</p>
+                <p>If the output of expected and actual truth table mismatches for the same input then that input set will be the test set of the corresponding fault position.</p>
+                <center><img src="images/timeg1.jpeg" alt=""></center>
+                <center><p>Figure: Normal timing diagram of the clock wise input.</p></center>
+                <center><img src="images/timeg2.jpeg" alt=""></center>
+                <center><p>Figure: Timing Diagram when Input Z is forced to 1</p></center>
+                <p style="margin-bottom: 40px;"></p>
+                <center><p style="font-size: 25px;">PROCEDURE TO SIMULATE IN WEBSITE</p></center>
+                <p>Step 1: First on the VCC.</p>
+                    <p>(As the circuit in the simulation is faulty one based on single stuck at 1 fault model, so u will get unusual result)</p>
+                <p>Step 2: Click on the “input” button to give the input.</p>
+                <p> &emsp;&emsp;&emsp; Green-(Input 1)</p>
+                <p> &emsp;&emsp;&emsp; Red  -(Input 0)</p>
+                <p>Step 3: After selecting input value, you will get the corresponding faulty output, to add the result in the truth table click on “ADD” button.</p>
+                <p>Step 4: Repeat 2 and 3 to get all the faulty output at the current fault position.</p>
+                <p>Step 5: Now compare it with the real truth table and try to get the fault position.</p>
+                <p style="margin-bottom:30px;">Step 6: To change the fault position, click on “Change fault position”</p>
+
+            </div>
+          </div>
+      </section>
+    <!-- Footer Section Start  -->
+    <footer>
+        <span>Made with <span class="fas fa-heart"></span> by <a href="#">SNOW</a> | <span class="far fa-copyright"></span> 2021 All rights reserved.</span>
+    </footer>
+    
+    <script>
+        //Get the button:
+        mybutton = document.getElementById("myBtn");
+        myNav = document.getElementById("Nav");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.classList.add('show')
+        myNav.classList.add('sticky')
+        } else {
+            mybutton.classList.remove('show')
+            myNav.classList.remove('sticky')
+        }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        function moveUp() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+</body>
+</html>
