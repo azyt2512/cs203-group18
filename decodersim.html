@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decoder Simulation</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/25ec9fc0e1.js"crossorigin="anonymous"></script>
     <style>.navbar .max-width .logo a, .navbar .max-width .menu li a{
         color: black;
     }
@@ -31,6 +30,156 @@
     center{
         padding: 20px 0 20px 0;
     }
+    .mux {
+            text-align: center;
+            border: 2px solid;
+            padding-top: 42spx;
+            width: 100px;
+            height:155px;
+            background-color: rgb(82, 82, 238);
+        }
+        .gate{
+            margin-top: 106px;
+            height: 352px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .circuit{
+            margin: auto;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items:center ;
+            margin-top: -453px;
+        }
+         .btn{
+           display: flex;
+           flex-direction: column-reverse;
+           margin-top: -63px;
+           width: 45px;
+           height: 160px;
+           justify-content: space-between;
+           align-items: flex-end;
+        } 
+        button{
+            float: left;
+            width: 33px;
+            height: 20px;
+            
+        }
+        #vcc{
+            width: 43px;
+            height: 30px;
+            margin-top: 13spx;
+        }
+        .wires{
+            height: 360px;
+            width: 138px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            /* overflow: auto; */
+            /* margin-top: 130px; */
+            flex-shrink: 10;
+            align-items: flex-end;
+            position: relative;
+            z-index: 1;
+        }
+        .hwires{
+            width: 149px;
+            height: 360px;
+            top: -354px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction:  row-reverse;
+            justify-content: space-between;
+            padding: 0px 31px;
+        }
+        .wire {
+            margin: 14px 0px;
+            width: 138px;
+            height: 3px;
+            background-color: black;
+            background-image: repeating-linear-gradient(60deg,transparent 10px,#87530f 15px);
+            /* margin-top: 300px; */
+            
+        }
+    
+
+        .out{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            height: 317px;
+            width: 22px;
+            margin-top: 73px;
+            justify-content: space-between;
+            align-items: flex-end;
+            
+        }
+        .owires{
+            height: 365px;
+            width: 96px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            /* overflow: auto; */
+            margin-top: 116px;
+            flex-shrink: 10;
+        }
+        .owire{
+            
+            margin: 8.8px 0px;
+            width: 98px;
+            height: 3px;
+            background-color: black;
+            background-image: repeating-linear-gradient(60deg,transparent 10px,#87530f 15px);
+        }
+        /* .ogape{
+            margin: 11px 0px;
+        } */
+        .out li{
+            font-size: 9.8px;
+            border: 2px solid;
+            height: 19px;
+            width: 20px;
+            float: right;
+            padding-top: 3px;
+            border-radius: 10px;
+            margin-top: 2px;
+        }
+        .ttable{
+            display: flex;
+            margin: 20px 0px ;
+            flex-direction: column;
+            height: auto;
+        }
+        .xbutts{
+            margin: 10px 341px;
+            display: flex;
+            flex-direction:  row-reverse;
+            justify-content: space-between;
+        }
+        .faulty{
+            border: 2px solid;
+            width: 575px;
+            height: auto;
+            margin: 10px 280px;
+        }
+        .xbutts button{
+            background-color: rgb(221, 92, 118);
+            /* padding: 9px; */
+            font-weight: bold;
+            text-align: center;
+        }
+        .faulty tr{
+            /* display: flex; */
+            /* flex-direction: row; */
+            justify-content: space-between;
+        }
+        
 </style>
 </head>
 <body>
@@ -59,14 +208,303 @@
       <section class="decoder" id="decoder">
           <div class="max-width">
             <div class="box">
+                <center><h1>Faulty 4x16 Decoder</h1></center>
+                    <div class="circuit">
+                  <div class="btn">
+                      <button id="vcc" style="background-color:tomato" onclick="chndefault()">VCC</button>
+                      <button id="a0" style="background-color:tomato" onclick="chnclr('a0')">A0</button>
+                      <button id="a1" style="background-color:tomato" onclick="chnclr('a1')">A1</button>
+                      <button id="a2" style="background-color:tomato" onclick="chnclr('a2')">A2</button>
+                      <button id="a3" style="background-color:tomato" onclick="chnclr('a3')">A3</button> 
+          
+                  </div>
+                    <div style="margin-top: 491px; width: 138px;">
+                  <div class="wires">
+                      <div class="wire"> </div>
+                      <div class="wire"> </div>
+                      <div class="wire"> </div>
+                      <div class="wire"> </div>
+                      <div class="wire" style="margin: 19px 0px;"> </div>
+                      <div style="margin: 15px 0px;"></div>
+                      <div class="wire" style="width: 107px;"> </div>
+                      <div class="wire" style="width: 78px;"> </div>
+                      <div class="wire" style="width: 51px;"> </div>
+                      <div class="wire" style="width: 23px;"> </div>
+                  </div>   
+                      <div class="hwires">
+                         <div class="wire" style="width: 3px; height: 196px; margin-top: 101px;"> </div>
+                         <div class="wire" style="width: 3px; height: 196px; margin-top: 70px;"> </div>
+                         <div class="wire" style="width: 3px; height: 196px; margin-top: 40px;"> </div>
+                         <div class="wire" style="width: 3px; height: 196px; margin-top: 10px;"> </div>
+                      </div>
+                  </div>
+                  <div class="gate">
+                  <div class="mux">
+                      <h3>3x8 Decoder</h1>
+                   </div>
+                  <div class="mux">
+                      <h3>3x8 Decoder</h3>
+                  </div>
+                  </div>
+                  <div class="owires">
+                      <div class="owire"></div>
+                      <div class="owire"></div>
+                      <div class="owire"></div>
+                      <div class="owire"></div>
+                      <div class="owire"></div>
+                      <div class="owire"></div>
+                      <div class="owire"></div>
+                      <div class="owire"></div>
+                      <div  style="margin: 13px 0px;"></div>
+                      <div class="owire"></div>
+                      <div class="owire"></div>
+                      <div class="owire"></div>
+                      <div class="owire"></div>
+                      <div class="owire"></div>
+                      <div class="owire"></div>
+                      <div class="owire"></div>
+                      <div class="owire"></div>
+                  </div>
+                  <div class="out">
+                    
+                        <li id="d0" style="background-color: grey;">D0</li>
+                        <li id="d1" style="background-color: grey;">D1</li>
+                        <li id="d2" style="background-color: grey;">D2</li>
+                        <li id="d3" style="background-color: grey;">D3</li>
+                        <li id="d4" style="background-color: grey;">D4</li>
+                        <li id="d5" style="background-color: grey;">D5</li>
+                        <li id="d6" style="background-color: grey;">D6</li>
+                        <li id="d7" style="background-color: grey;">D7</li>
+                        <div style="margin: 15px 0px;"></div>
+                        <li id="d8" style="background-color: grey;">D8</li>
+                        <li id="d9" style="background-color: grey;">D09</li>
+                        <li id="d10" style="background-color: grey;">D10</li>
+                        <li id="d11" style="background-color: grey;">D11</li>
+                        <li id="d12" style="background-color: grey;">D12</li>
+                        <li id="d13" style="background-color: grey;">D13</li>
+                        <li id="d14" style="background-color: grey;">D14</li>
+                        <li id="d15" style="background-color: grey;">D15</li>
+                    
+                  </div>   
+              </div>
+            <div class="ttable">  
+            <div class="xbutts">
+                   <button style="width: 129px;height: auto; " onclick="chn_flt()">change fault position</button>
+                   <button style="width: 38px; height: 40px;" onclick="ad_tab()">add</button>
+               </div>
+               <div class="faulty">
+                 <table id="tabl" rules="all">
+            <thead>
+                   <tr>   
+                       <th>A03</th>
+                       <th>A02</th>
+                       <th>A01</th>
+                       <th>A00</th>
+                       <th>Y00</th>
+                       <th>Y01</th>
+                       <th>Y02</th>
+                       <th>Y03</th>
+                       <th>Y04</th>
+                       <th>Y05</th>
+                       <th>Y06</th>
+                       <th>Y07</th>
+                       <th>Y08</th>
+                       <th>Y09</th>
+                       <th>Y10</th>
+                       <th>Y11</th>
+                       <th>Y12</th>
+                       <th>Y13</th>
+                       <th>Y14</th>
+                       <th>Y15</th>
+                      </tr>
+            </thead>
+            <tbody id="tbdy">
 
+            </tbody>
+                   </table>
+               </div>
+            </div>
+            
             </div>
           </div>
       </section>
-          <!-- Footer Section Start  -->
-    <footer>
+      <footer>
         <span>Made with <span class="fas fa-heart"></span> by <a href="#">SNOW</a> | <span class="far fa-copyright"></span> 2021 All rights reserved.</span>
-        </footer>
-    
+    </footer>
 </body>
+<script>
+   let flt_pos= 3;
+   let tot_rows=0;
+   function em_tab()
+   {    let id=document.getElementById("tabl");
+        while (tot_rows>0) {
+           let row=id.deleteRow(tot_rows) ;
+           tot_rows--;
+        }
+
+   }
+   function chn_flt()
+   {   em_tab();
+       flt_pos=flt_pos+3;
+       flt_pos=(flt_pos % 29)+1;
+       console.log(flt_pos);
+       
+       let id5=document.getElementById("vcc");
+       if(id5.style.backgroundColor=='green')
+       {  chndefault();}
+   }
+   function chndefault()
+   {
+       let id1=document.getElementById("a0");
+       if(id1.style.backgroundColor=='green')
+       {  chnclr("a0");} 
+       let id2=document.getElementById("a1");
+       if(id2.style.backgroundColor=='green')
+       {  chnclr("a1");}
+       let id3=document.getElementById("a2");
+       if(id3.style.backgroundColor=='green')
+       {  chnclr("a2");}
+       let id4=document.getElementById("a3");
+       if(id4.style.backgroundColor=='green')
+       {  chnclr("a3");}
+       chnclr('vcc');
+   }
+    function chnclr(var1)
+   {   
+       //  console.log(var1);
+        if(var1!="vcc" && document.getElementById("vcc").style.backgroundColor=='tomato'){
+           alert("On the VCC first!!");
+           return;
+        }
+        let ele= document.getElementById(var1);   
+        if(ele.style.backgroundColor =='tomato'){
+           ele.style.backgroundColor='green';
+        }
+        else{
+           ele.style.backgroundColor='tomato';
+        }
+        let ins=new Array(4);
+        for (let i = 0; i < ins.length; i++) {
+           let s="a"+i;
+           let di=document.getElementById(s);
+           if (di.style.backgroundColor=='tomato' ) {
+               ins[i]=false;
+           } 
+           else{
+               ins[i]=true;
+           } 
+        }
+        let outs=new Array(16);
+        for (let i = 0; i < outs.length; i++) {
+             outs[i]=0;
+        }
+
+          dec_outs(ins,outs,flt_pos);                 //calling func decouts
+
+        for (let j = 0; j < 16; j++) {
+            let str="d"+j;
+            let id=document.getElementById(str);
+           if (outs[j]==1 || outs[j]==-1) {
+               id.style.backgroundColor='red'; 
+           } 
+           else{
+               id.style.backgroundColor='grey';
+           }
+        }    
+   }
+function dec_outs(a,output,sa)
+{
+       if(document.getElementById("vcc").style.backgroundColor=='green')
+   {   for(let i=0;i<16;i++)
+       {  output[i]=2;  }
+        let b=new Array(4);
+      { if(sa<=4 && sa>0)                             //selecting inputs according to stuck at position
+         { a[sa-1]=true;
+         }
+         b[0]=a[0];
+         b[1]=a[1];
+         b[2]=a[2];
+         if(a[3]==true)
+          b[3]=false;
+         else
+          b[3]=true;
+         if(sa>4 && sa<=8)
+         {  if(sa==8)
+            b[3]=0;
+            else
+            b[sa-5]=1;
+         }
+         if(sa>8 && sa<=12)
+         {  a[sa-9]=true;
+         }
+         if(sa==13)
+          b[3]=true;
+        if(sa>13 && sa<=29)
+         output[sa-14]=true;
+      }
+    for (let i = 0; i < 16; i++)          //deciding outputs;
+    {  if(output[i]==2) 
+       {    switch (i)
+           {
+            case 0:output[i]= b[3]&(~a[0])&(~a[1])&(~a[2]); break;
+            case 1:output[i]= b[3]&(a[0])&(~a[1])&(~a[2]); break;
+            case 2:output[i]= b[3]&(~a[0])&(a[1])&(~a[2]); break;
+            case 3:output[i]= b[3]&(a[0])&(a[1])&(~a[2]); break;
+            case 4:output[i]= b[3]&(~a[0])&(~a[1])&(a[2]); break;
+            case 5:output[i]= b[3]&(a[0])&(~a[1])&(a[2]); break;
+            case 6:output[i]= b[3]&(~a[0])&(a[1])&(a[2]); break;
+            case 7:output[i]= b[3]&(a[0])&(a[1])&(a[2]); break;
+            case 8:output[i]= a[3]&(~b[0])&(~b[1])&(~b[2]); break;
+            case 9:output[i]= a[3]&(b[0])&(~b[1])&(~b[2]); break;
+           case 10:output[i]= a[3]&(~b[0])&(b[1])&(~b[2]); break;
+           case 11:output[i]= a[3]&(b[0])&(b[1])&(~b[2]); break;
+           case 12:output[i]= a[3]&(~b[0])&(~b[1])&(b[2]); break;
+           case 13:output[i]= a[3]&(b[0])&(~b[1])&(b[2]); break;
+           case 14:output[i]= a[3]&(~b[0])&(b[1])&(b[2]); break;
+           case 15:output[i]= a[3]&(b[0])&(b[1])&(b[2]); break;
+             default: break;
+          }
+       }
+   }
+   // console.log(output[0]);
+   }   
+
+     }
+function ad_tab()
+{  let bstr=new Array(20);
+   for (let i = 0; i < 4; i++) {
+    let s="a"+i;
+    let di=document.getElementById(s);
+    if (di.style.backgroundColor=='tomato' ) {
+        bstr[i]=0;
+    } 
+    else{
+        bstr[i]=1;
+    } 
+       
+   }
+   for (let i = 0; i < 16; i++) {
+    let str="d"+i;
+    let id=document.getElementById(str);
+      if (id.style.backgroundColor=='red') {
+         bstr[4+i]=1 ; 
+      } 
+      else{
+        bstr[4+i]=0;
+      }
+   }
+   tot_rows++;
+   let id=document.getElementById("tabl");
+   let row=id.insertRow(tot_rows);
+   for (let i = 0; i < 20; i++) {
+      let cell=row.insertCell(i);
+      cell.innerHTML=bstr[i]; 
+   }
+   
+     
+       
+   
+}
+
+</script>
 </html>
