@@ -72,7 +72,7 @@ function print() {
     let id = document.getElementById(str);
     if (outs[j] == 1 || outs[j] == -1) {
       id.style.backgroundColor = "rgb(53, 233, 53)";
-      id.style.boxShadow = '0px 0px 8px 4px rgb(53, 233, 53)';
+      id.style.boxShadow = '0px 0px 8px 4px rgb(149,240,149)';
     } else {
       id.style.backgroundColor = "#eee";
       id.style.boxShadow='none';
