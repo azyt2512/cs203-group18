@@ -63,7 +63,3 @@ $(document).ready(function(){
         }
     });
 });
-//Alert message
-function gitlink() {
-    alert("Source file is shared of can be found at https://github.com/JyotiSuman09/cs203-group18");
-  }
