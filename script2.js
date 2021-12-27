@@ -71,9 +71,11 @@ function print() {
     let str = "d" + j;
     let id = document.getElementById(str);
     if (outs[j] == 1 || outs[j] == -1) {
-      id.style.backgroundColor = "red";
+      id.style.backgroundColor = "rgb(53, 233, 53)";
+      id.style.boxShadow = '0px 0px 8px 4px rgb(53, 233, 53)';
     } else {
-      id.style.backgroundColor = "grey";
+      id.style.backgroundColor = "#eee";
+      id.style.boxShadow='none';
     }
   }
 }
@@ -195,13 +197,13 @@ for (let i = 0; i < 4; i++) {
 }
   let outps1=new Array(16);
   let outps2=new Array(16);
-  let flts=new Array(1);
+  let flts=new Array();
   flts.push(0);
   dec_outs(inps,outps2,flts);
  for (let i = 0; i < 16; i++) {
  let str="d"+i;
  let id=document.getElementById(str);
-   if (id.style.backgroundColor=='red') {
+   if (id.style.backgroundColor=='rgb(53, 233, 53)') {
       bstr[4+i]=1;
       outps1[i]=1 ; 
    } 
@@ -210,15 +212,16 @@ for (let i = 0; i < 4; i++) {
      outps1[i]=0;
    }
 }
-  let chk=1;
+  let chk=1; 
+  let cellHigh = new Array();
   for (let i =0 ; i < 16 ; i++) {
     if(i==0 && outps1[i]-outps2[i]!=2)
      {chk=0;
-      break;}  
+      cellHigh.push(i);}  
     else if(i!=0){
      if(outps1[i]!=outps2[i])
         {chk=0;
-        break;}
+        cellHigh.push(i);}
     }      
   }
     // console.log(chk);
@@ -226,6 +229,7 @@ for (let i = 0; i < 4; i++) {
 tot_rows++;
 let id=document.getElementById("tabl");
 let row=id.insertRow(tot_rows);
+let j=0;
 for (let i = 0; i < 20; i++) {
    let cell=row.insertCell(i);
    if(i<4 && chk==1)
@@ -233,12 +237,37 @@ for (let i = 0; i < 20; i++) {
   if(chk==0)
   { if(i<4)
      cell.style.backgroundColor='rgb(250,80,110)'; 
-     else
-     cell.style.backgroundColor='pink'; 
+    else if((i-4)==cellHigh[j]){
+     cell.style.backgroundColor='#dd403d'; 
+     j++;}
+    else
+      cell.style.backgroundColor='pink';
   }
    cell.innerHTML=bstr[i];
- 
 }
+flts.pop();
+for (let i = 1; i < 30; i++) {
+  let s="fa"+i;
+ let di=document.getElementById(s); 
+ if (di.style.backgroundColor=='red' ) {
+     flts.push(i);
+ }  
+}
+if(flts[0]==undefined)
+ flts.push(0);
+   let cell=row.insertCell(20);
+   let str;
+   if(flts[0]==0)
+    {str="NA";}
+   else{ 
+    str=flts[0];    
+   for (let i = 1; i < flts.length; i++) {
+      str=str+","+flts[i];
+   }
+   }
+   if(chk==0)
+   {  cell.style.backgroundColor='pink'; }
+   cell.innerHTML=str;
 }
 function addfltpos(posid) {
   if (document.getElementById("vcc").style.backgroundColor == "tomato") {
