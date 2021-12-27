@@ -115,7 +115,7 @@
     font-size: 27px;
 }
 .home .home-content .text-2{
-    font-size: 75px;
+    font-size: 55px;
     font-weight: 600;
     margin-left: -3px;
 }
@@ -141,6 +141,15 @@
 .home .home-content a:hover{
     color: #fff;
     background: none;
+}
+.home .nitklogo{
+    position: absolute;
+    right: 0;
+    top: 25vh;
+    width: 650px;
+}
+.home .nitklogo img{
+    width: 70%;
 }
 
 /* Similar content styling  */
@@ -629,8 +638,11 @@ footer span a:hover{
     .home .max-width{
         margin-left: 0;
     }
+    .home .max-width .nitklogo{
+        display: none;
+    }
     .skills .skills-content .right img{
-        width: 450px!important;
+        width: 450px;
     }
 }
 @media (max-width: 1104px){
