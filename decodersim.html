@@ -85,12 +85,7 @@
             /* align-items:center ; */
         
         }
-        .num{
-            position: relative;
-            top: -15px;
-            left: -7px;
-        }
-         .btn{
+        .btn{
            display: flex;
            flex-direction: column-reverse;
            /* margin-top: -63px; */
@@ -244,15 +239,25 @@
              height: 25px;
              background-color: rgb(155, 233, 233);
          }
-         .iposs{
-             height: 8px;
-             width: 8px;
-             border-radius: 4px;
+        .iposs{
+             height: 10px;
+             width: 10px;
+             border-radius: 50%;
              background-color: blue;
              list-style: none;
              margin: -3px 8px;
              cursor: pointer;
          }
+        .num{
+            position: relative;
+            top: -15px;
+            left: -7px;
+        }
+        .numr{
+            position: relative;
+            top: -15px;
+            left: -17px;
+        }
          
 </style>
 </head>
@@ -301,9 +306,9 @@
               <div style=" width: 138px;">
                   <div class="wires">
                       <div class="wire">
-                         <button type="button" id="fa4" class="iposs" style="z-index: 9;" onmousedown="addfltpos('fa4');"><span class="num">4</span></button>
+                         <button type="button" id="fa4" class="iposs" style="z-index: 9;" onclick="addfltpos('fa4');"><span class="num">4</span></button>
                          <button type="button" id="fa8" class="iposs" style="z-index: 9;" onclick="addfltpos('fa8')"><span class="num">8</span></button>
-                         <button type="button" id="fa13" class="iposs" style="z-index: 9;" ondblclick="addfltpos('fa13')"><span class="num">13</span></button> 
+                         <button type="button" id="fa13" class="iposs" style="z-index: 9;" onclick="addfltpos('fa13')"><span class="num">13</span></button> 
                         </div>
                       <div class="wire">
                         <button type="button" id="fa3" class="iposs" style="z-index: 9;" onclick="addfltpos('fa3')"><span class="num">3</span></button>
@@ -343,23 +348,23 @@
                   </div>
                   </div>
                   <div class="owires">
-                      <div class="owire"><button type="button" id="fa14" class="iposs" onmousedown="addfltpos('fa14');"><span class="num">14</span></button></div>
-                      <div class="owire"><button type="button" id="fa15" class="iposs" onclick="addfltpos('fa15')"><span class="num">15</span></button></div>
-                      <div class="owire"><button type="button" id="fa16" class="iposs" onclick="addfltpos('fa16')"><span class="num">16</span></button></div>
-                      <div class="owire"><button type="button" id="fa17" class="iposs" onclick="addfltpos('fa17')"><span class="num">17</span></button></div>
-                      <div class="owire"><button type="button" id="fa18" class="iposs" onclick="addfltpos('fa18')"><span class="num">18</span></button></div>
-                      <div class="owire"><button type="button" id="fa19" class="iposs" onclick="addfltpos('fa19')"><span class="num">19</span></button></div>
-                      <div class="owire"><button type="button" id="fa20" class="iposs" onclick="addfltpos('fa20')"><span class="num">20</span></button></div>
-                      <div class="owire"><button type="button" id="fa21" class="iposs" onclick="addfltpos('fa21')"><span class="num">21</span></button></div>
+                      <div class="owire"><button type="button" id="fa14" class="iposs" onmousedown="addfltpos('fa14');"><span class="numr">14</span></button></div>
+                      <div class="owire"><button type="button" id="fa15" class="iposs" onclick="addfltpos('fa15')"><span class="numr">15</span></button></div>
+                      <div class="owire"><button type="button" id="fa16" class="iposs" onclick="addfltpos('fa16')"><span class="numr">16</span></button></div>
+                      <div class="owire"><button type="button" id="fa17" class="iposs" onclick="addfltpos('fa17')"><span class="numr">17</span></button></div>
+                      <div class="owire"><button type="button" id="fa18" class="iposs" onclick="addfltpos('fa18')"><span class="numr">18</span></button></div>
+                      <div class="owire"><button type="button" id="fa19" class="iposs" onclick="addfltpos('fa19')"><span class="numr">19</span></button></div>
+                      <div class="owire"><button type="button" id="fa20" class="iposs" onclick="addfltpos('fa20')"><span class="numr">20</span></button></div>
+                      <div class="owire"><button type="button" id="fa21" class="iposs" onclick="addfltpos('fa21')"><span class="numr">21</span></button></div>
                       <div  style="margin: 13px 0px;"></div>
-                      <div class="owire"><button type="button" id="fa22" class="iposs" onclick="addfltpos('fa22')"><span class="num">22</span></button></div>
-                      <div class="owire"><button type="button" id="fa23" class="iposs" onclick="addfltpos('fa23')"><span class="num">23</span></button></div>
-                      <div class="owire"><button type="button" id="fa24" class="iposs" onclick="addfltpos('fa24')"><span class="num">24</span></button></div>
-                      <div class="owire"><button type="button" id="fa25" class="iposs" onclick="addfltpos('fa25')"><span class="num">25</span></button></div>
-                      <div class="owire"><button type="button" id="fa26" class="iposs" onclick="addfltpos('fa26')"><span class="num">26</span></button></div>
-                      <div class="owire"><button type="button" id="fa27" class="iposs" onclick="addfltpos('fa27')"><span class="num">27</span></button></div>
-                      <div class="owire"><button type="button" id="fa28" class="iposs" onclick="addfltpos('fa28')"><span class="num">28</span></button></div>
-                      <div class="owire"><button type="button" id="fa29" class="iposs" onclick="addfltpos('fa29')"><span class="num">29</span></button></div>
+                      <div class="owire"><button type="button" id="fa22" class="iposs" onclick="addfltpos('fa22')"><span class="numr">22</span></button></div>
+                      <div class="owire"><button type="button" id="fa23" class="iposs" onclick="addfltpos('fa23')"><span class="numr">23</span></button></div>
+                      <div class="owire"><button type="button" id="fa24" class="iposs" onclick="addfltpos('fa24')"><span class="numr">24</span></button></div>
+                      <div class="owire"><button type="button" id="fa25" class="iposs" onclick="addfltpos('fa25')"><span class="numr">25</span></button></div>
+                      <div class="owire"><button type="button" id="fa26" class="iposs" onclick="addfltpos('fa26')"><span class="numr">26</span></button></div>
+                      <div class="owire"><button type="button" id="fa27" class="iposs" onclick="addfltpos('fa27')"><span class="numr">27</span></button></div>
+                      <div class="owire"><button type="button" id="fa28" class="iposs" onclick="addfltpos('fa28')"><span class="numr">28</span></button></div>
+                      <div class="owire"><button type="button" id="fa29" class="iposs" onclick="addfltpos('fa29')"><span class="numr">29</span></button></div>
                   </div>
                   <div class="out">
                     
