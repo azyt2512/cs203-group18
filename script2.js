@@ -38,6 +38,9 @@ function chnclr(var1) {
       let di = document.getElementById(s);
       di.style.backgroundColor = "tomato";
     }
+    for(let i=1;i<30;i++){
+      let id = document.getElementById(`fa${i}`);
+        id.style.backgroundColor='blue';}
   }
   print();
 }
@@ -74,7 +77,7 @@ function print() {
       id.style.backgroundColor = "rgb(53, 233, 53)";
       id.style.boxShadow = '0px 0px 8px 4px rgb(149,240,149)';
     } else {
-      id.style.backgroundColor = "#eee";
+      id.style.backgroundColor = "rgb(128, 128, 128, 0.56)";
       id.style.boxShadow='none';
     }
   }
