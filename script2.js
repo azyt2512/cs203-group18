@@ -238,7 +238,7 @@ for (let i = 0; i < 20; i++) {
   { if(i<4)
      cell.style.backgroundColor='rgb(250,80,110)'; 
     else if((i-4)==cellHigh[j]){
-     cell.style.backgroundColor='#dd403d'; 
+     cell.style.backgroundColor='#dd403d99'; 
      j++;}
     else
       cell.style.backgroundColor='pink';
@@ -268,6 +268,8 @@ if(flts[0]==undefined)
    if(chk==0)
    {  cell.style.backgroundColor='pink'; }
    cell.innerHTML=str;
+   if(cell.innerHTML=="NA"){;}
+   else cell.style.backgroundColor='#dd403d99'; 
 }
 function addfltpos(posid) {
   if (document.getElementById("vcc").style.backgroundColor == "tomato") {

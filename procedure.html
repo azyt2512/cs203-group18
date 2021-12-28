@@ -58,10 +58,10 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#about">Intro</a></li>
             <li><a href="index.html#services">Report</a></li>
-            <li><a href="Prerequisite.html">Pre Requisite</a></li>
+            <li><a href="Prerequisite.html">Theory</a></li>
             <li><a href="procedure.html">Procedure</a></li>
             <li><a href="decodersim.html">Simulation</a></li>
-            <li><a href="fault.html">Fault Finding</a></li>
+            <!-- <li><a href="fault.html">Fault Finding</a></li> -->
             <li><a href="index.html#skills">Conclusion</a></li>
             <!-- <li><a href="#teams">Teams</a></li> -->
             <!-- <li><a href="#contact">Contacts</a></li> -->
@@ -77,7 +77,7 @@
             <div class="box">
                 <center><h1>How to do perform simulations</h1></center>
                 <p style="font-weight: bold;">Procedure</p>
-                <center><p style="font-size: 25px;">PROCEDURE FOR RUNNING THE XILING SIMULATION</p></center>
+                <!-- <center><p style="font-size: 25px;">PROCEDURE FOR RUNNING THE XILING SIMULATION</p></center>
                 <p>The verhilog code for written 4x16 decoder using two 3x8 decoder using enable.</p>
                 <p>We had done it using module instantiations of the verhilog code i.e., we had written the verhilog code for a 3x8 decoder then we use the copy of this module in 4x16 decoder.</p>
                 <p>Steps to view the RTL view of the circuit:</p>
@@ -109,14 +109,13 @@
                 <center><p>Figure: Normal timing diagram of the clock wise input.</p></center>
                 <center><img src="images/timeg2.jpeg" alt=""></center>
                 <center><p>Figure: Timing Diagram when Input Z is forced to 1</p></center>
-                <p style="margin-bottom: 40px;"></p>
-                <center><p style="font-size: 25px;">PROCEDURE TO SIMULATE IN WEBSITE</p></center>
-                <p>Step 1: First on the VCC.</p>
-                    <p>(As the circuit in the simulation is faulty one based on single stuck at 1 fault model, so u will get unusual result)</p>
-                <p>Step 2: Click on the “input” button to give the input.</p>
+                <p style="margin-bottom: 40px;"></p> -->
+                <center><p style="font-size: 25px;">PROCEDURE FOR SIMULATION</p></center>
+                <p>Step 1: First turn on the VCC.</p>
+                <p>Step 2: Click on the “input” buttons A0, A1, A2 & A3 to give the input.</p>
                 <p> &emsp;&emsp;&emsp; Green-(Input 1)</p>
                 <p> &emsp;&emsp;&emsp; Red  -(Input 0)</p>
-                <p>Step 3: After selecting input value, you will get the corresponding faulty output, to add the result in the truth table click on “ADD” button.</p>
+                <p>Step 3: Now select desired fault position marked at various positions. These are tiny blue circles. If any blue circle turns red that means that part of wire is stucked at1</p>
                 <p>Step 4: Repeat 2 and 3 to get all the faulty output at the current fault position.</p>
                 <p>Step 5: Now compare it with the real truth table and try to get the fault position.</p>
                 <p style="margin-bottom:30px;">Step 6: To change the fault position, click on “Change fault position”</p>
