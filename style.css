@@ -146,7 +146,9 @@
     position: absolute;
     right: 0;
     top: 28vh;
-    width: 520px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
 }
 .home .nitklogo img{
     width: 65%;
