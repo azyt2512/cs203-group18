@@ -275,10 +275,11 @@ if(flts[0]==undefined)
    else cell.style.backgroundColor='#dd403d99'; 
 }
 function addfltpos(posid) {
-  if (document.getElementById("vcc").style.backgroundColor == "tomato") {
-    alert("On the VCC first!!");
-    return;
-  } else {
+  // if (document.getElementById("vcc").style.backgroundColor == "tomato") {
+  //   alert("On the VCC first!!");
+  //   return;
+  // }
+  //  else {
     // console.log(posid);
     let di = document.getElementById(posid);
     if (di.style.backgroundColor === "red") {
@@ -290,5 +291,5 @@ function addfltpos(posid) {
     // if(document.getElementById("vcc").style.backgroundColor=='green')
     //   chnclr("vcc");
     print();
-  }
+  // }
 }
