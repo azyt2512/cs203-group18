@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoder Simulation</title>
+    <link rel = "icon" href ="images/18_icon_A_(Hungary).svg" type = "image/x-icon">
+    <script src="https://kit.fontawesome.com/25ec9fc0e1.js"crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    .max-width {
+    max-width: 1600px;
+    }
+    
+    .decoder .max-width .box{
+        /* background-color: rebeccapurple; */
+        border: 3px solid black;
+        border-radius: 8px;
+        box-shadow: 10px 14px 10px grey; 
+        display: flex;
+        flex-direction: row;
+        margin-top: 32px;
+        flex-wrap: wrap;
+    }
+    .decoder .max-width .box h1{
+        font-size: 35px;
+        width: 100%;
+    }
+    .decoder .max-width .box p{
+        font-size: 22px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    center{
+        padding: 20px 0 20px 0;
+    }
+    .navbar .max-width .logo a{
+            color: black;
+    }
+    .sticky .max-width .logo a{
+            color: #fff;
+    }
+    .navbar .max-width ul li a{
+            color: black;
+    }
+    .sticky .max-width ul li a{
+            color: #fff;
+    }
+    .mainf{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .box .heading center{
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    .mux {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            border: 2px solid;
+            padding-top: 42spx;
+            width: 100px;
+            height:155px;
+            border-radius: 8px;
+            background-color: rgb(88 194 255);
+        }
+        .gate{
+            /* margin-top: 106px; */
+            height: 338px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .circuit{
+            margin: 62px 100px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            height: 400px;
+            /* align-items:center ; */
+        
+        }
+        .btn{
+           display: flex;
+           flex-direction: column-reverse;
+           /* margin-top: -63px; */
+           width: 45px;
+           height: 160px;
+           justify-content: space-between;
+           align-items: flex-end;
+        } 
+        button{
+            float: left;
+            width: 33px;
+            height: 20px;
+            
+        }
+        #vcc{
+            width: 43px;
+            height: 30px;
+            margin-top: 13spx;
+        }
+        .wires{
+            height: 360px;
+            width: 138px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            /* overflow: auto; */
+            /* margin-top: 130px; */
+            flex-shrink: 10;
+            align-items: flex-end;
+            position: relative;
+            /* z-index: 1; */
+        }
+        .hwires{
+            width: 137px;
+            height: 360px;
+            top: -354px;
+            position: relative;
+            /* z-index: 1; */
+            display: flex;
+            flex-direction:  row-reverse;
+            justify-content: space-between;
+            padding: 0px 37px;
+        }
+        .wire {
+            margin: 14px 0px;
+            width: 138px;
+            height: 2px;
+            background-color: black;
+            background-image: repeating-linear-gradient(60deg,transparent 10px,#87530f 15px);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .ng{
+            top:-716.5px;
+            position: relative;
+            /* z-index: 1; */
+            left: 27px;
+        }
+        .ng img{
+            position: relative;
+            top: 2px;
+            height: 23px;
+            width: 23px;
+        }
+
+        .out{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            height: 338px;
+            width: 22px;
+            margin-top: -4px;
+            justify-content: space-between;
+            align-items: flex-end;
+            
+        }
+        .owires{
+            height: 365px;
+            width: 96px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            /* overflow: auto; */
+            margin-top: -2px;
+            flex-shrink: 10;
+        }
+        .owire{
+            
+            margin: 8.8px 0px;
+            width: 98px;
+            height: 2px;
+            background-color: black;
+            background-image: repeating-linear-gradient(60deg,transparent 10px,#87530f 15px);
+            display: flex;
+            justify-content: right;
+        }
+        /* .ogape{
+            margin: 11px 0px;
+        } */
+        .out li{
+            font-size: 9.8px;
+            border: 2px solid;
+            height: 19px;
+            width: 23px;
+            float: right;
+            padding-top: 3px;
+            border-radius: 10px;
+            margin-top: 1px;
+            cursor: not-allowed;
+        }
+        .ttable{
+            display: flex;
+            margin: 53px 0px 0px 30px;
+            flex-direction: column;
+            height: auto;
+            width: 635px;
+        }
+        .xbutts{
+            margin: 10px 15px;
+            display: flex;
+            flex-direction:  row-reverse;
+            justify-content: space-between;
+        }
+        .faulty{
+            /* border: 2px solid; */
+            width: 575px;
+            height: 400px;
+            margin: 10px 0px;
+            width: 632px;
+        }
+        .xbutts button{
+            background-color: rgb(221, 92, 118);
+            /* padding: 9px; */
+            font-weight: bold;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px 2px rgb(216, 146, 146);
+        }
+         .faulty table, th{
+             border: 1px solid;
+             font-size: 14px;
+             padding: 0px 3px;
+             text-align: center;
+         }
+         .faulty th,td{
+             width: 32px;
+             
+         }
+         .faulty td{
+             height: 25px;
+             background-color: rgb(155, 233, 233);
+         }
+        .iposs{
+             height: 10px;
+             width: 10px;
+             border-radius: 50%;
+             background-color: blue;
+             list-style: none;
+             margin: -4px 8px;
+             cursor: pointer;
+         }
+         .oposs{
+             height: 10px;
+             width: 10px;
+             border-radius: 50%;
+             background-color: blue;
+             list-style: none;
+             margin: -4px 20px;
+             cursor: pointer;
+         }
+        .num{
+            position: relative;
+            top: -15px;
+            left: -7px;
+        }
+        .numr{
+            position: relative;
+            top: -15px;
+            left: -17px;
+        }
+         
+</style>
+</head>
+<body>
+    <div class="scroll-up-btn" id="myBtn" onclick="moveUp();">
+        <i style="display: inline;"!important class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar" id="Nav">
+        <div class="max-width">
+          <div class="logo">
+            <a href="#">CS203 Group<span>18.</span></a>
+          </div>
+          <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">Intro</a></li>
+            <li><a href="index.html#services">Report</a></li>
+            <li><a href="Prerequisite.html">Theory</a></li>
+            <li><a href="procedure.html">Procedure</a></li>
+            <li><a href="decodersim.html">Simulation</a></li>
+            <!-- <li><a href="fault.html">Fault Finding</a></li> -->
+            <li><a href="index.html#skills">Conclusion</a></li>
+            <!-- <li><a href="#teams">Teams</a></li> -->
+            <!-- <li><a href="#contact">Contacts</a></li> -->
+        </ul>
+          <div class="menu-btn">
+              <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+
+      <section class="decoder" id="decoder">
+          <div class="max-width">
+              <div class="box">
+                <h1><center> SA1 Fault in 4x16 Decoder</center></h1>
+            <div class="mainf">
+            <div class="ckt">     
+            <div class="circuit">
+                  <div class="btn">
+                      <button id="vcc" style="background-color:tomato" onclick="chnclr('vcc')">VCC</button>
+                      <button id="a0" style="background-color:tomato" onclick="chnclr('a0')">A0</button>
+                      <button id="a1" style="background-color:tomato" onclick="chnclr('a1')">A1</button>
+                      <button id="a2" style="background-color:tomato" onclick="chnclr('a2')">A2</button>
+                      <button id="a3" style="background-color:tomato" onclick="chnclr('a3')">A3</button> 
+          
+                  </div>
+              <div style=" width: 138px;">
+                  <div class="wires">
+                      <div class="wire">
+                         <button type="button" id="fa4" class="iposs" style="z-index: 9;" onclick="addfltpos('fa4');"><span class="num">4</span></button>
+                         <button type="button" id="fa8" class="iposs" style="z-index: 9;" onclick="addfltpos('fa8')"><span class="num">8</span></button>
+                         <button type="button" id="fa13" class="iposs" style="z-index: 9;" onclick="addfltpos('fa13')"><span class="num">13</span></button> 
+                        </div>
+                      <div class="wire">
+                        <button type="button" id="fa3" class="iposs" style="z-index: 9;" onclick="addfltpos('fa3')"><span class="num">3</span></button>
+                        <button type="button" id="fa11" class="iposs" style="z-index: 9;" onclick="addfltpos('fa11')"><span class="num">11</span></button> 
+                    </div>
+                      <div class="wire">
+                        <button type="button" id="fa2" class="iposs" style="z-index: 9;" onclick="addfltpos('fa2')"><span class="num">2</span></button>
+                        <button type="button" id="fa10" class="iposs" style="z-index: 9;" onclick="addfltpos('fa10')"><span class="num">10</span></button> 
+                    </div>
+                      <div class="wire">
+                        <button type="button" id="fa1" class="iposs" style="z-index: 9;" onclick="addfltpos('fa1')"><span class="num">1</span></button>
+                        <button type="button" id="fa9" class="iposs" style="z-index: 9;" onclick="addfltpos('fa9')"><span class="num">9</span></button> 
+                    </div>
+                      <div class="wire" style="margin: 19px 0px;"> </div>
+                      <div style="margin: 15px 0px;"></div>
+                      <div class="wire" style="width: 101px;"><button type="button" style="z-index: 9;" onclick="addfltpos('fa12')"id="fa12" class="iposs" ><span class="num">12</span></button> </div>
+                      <div class="wire" style="width: 81px;"> <button type="button" style="z-index: 9;" onclick="addfltpos('fa7')" id="fa7" class="iposs" ><span class="num">7</span></button></div>
+                      <div class="wire" style="width: 61px;"> <button type="button" style="z-index: 9;" onclick="addfltpos('fa6')" id="fa6" class="iposs" ><span class="num">6</span></button></div>
+                      <div class="wire" style="width: 40px;"> <button type="button" style="z-index: 9;" onclick="addfltpos('fa5')" id="fa5" class="iposs" ><span class="num">5</span></button></div>
+                  </div>   
+                  <div class="hwires">
+                    <div class="wire" style="width: 2px; height: 188px; margin-top: 100px;"> </div>
+                    <div class="wire" style="width: 2px; height: 188px; margin-top: 70px;"> </div>
+                    <div class="wire" style="width: 2px; height: 188px; margin-top: 40px;"> </div>
+                    <div class="wire" style="width: 2px; height: 188px; margin-top: 10px;"> </div>
+                 </div>
+               <div class="ng">
+                   <img src="images/another.jpeg" alt="notgate">
+               </div>
+                  </div>
+                  <div class="gate">
+                  <div class="mux">
+                      <h3>3x8 Decoder</h1>
+                   </div>
+                  <div class="mux">
+                      <h3>3x8 Decoder</h3>
+                  </div>
+                  </div>
+                  <div class="owires">
+                      <div class="owire"><button type="button" id="fa14" class="oposs" onmousedown="addfltpos('fa14');"><span class="numr">14</span></button></div>
+                      <div class="owire"><button type="button" id="fa15" class="oposs" onclick="addfltpos('fa15')"><span class="numr">15</span></button></div>
+                      <div class="owire"><button type="button" id="fa16" class="oposs" onclick="addfltpos('fa16')"><span class="numr">16</span></button></div>
+                      <div class="owire"><button type="button" id="fa17" class="oposs" onclick="addfltpos('fa17')"><span class="numr">17</span></button></div>
+                      <div class="owire"><button type="button" id="fa18" class="oposs" onclick="addfltpos('fa18')"><span class="numr">18</span></button></div>
+                      <div class="owire"><button type="button" id="fa19" class="oposs" onclick="addfltpos('fa19')"><span class="numr">19</span></button></div>
+                      <div class="owire"><button type="button" id="fa20" class="oposs" onclick="addfltpos('fa20')"><span class="numr">20</span></button></div>
+                      <div class="owire"><button type="button" id="fa21" class="oposs" onclick="addfltpos('fa21')"><span class="numr">21</span></button></div>
+                      <div  style="margin: 13px 0px;"></div>
+                      <div class="owire"><button type="button" id="fa22" class="oposs" onclick="addfltpos('fa22')"><span class="numr">22</span></button></div>
+                      <div class="owire"><button type="button" id="fa23" class="oposs" onclick="addfltpos('fa23')"><span class="numr">23</span></button></div>
+                      <div class="owire"><button type="button" id="fa24" class="oposs" onclick="addfltpos('fa24')"><span class="numr">24</span></button></div>
+                      <div class="owire"><button type="button" id="fa25" class="oposs" onclick="addfltpos('fa25')"><span class="numr">25</span></button></div>
+                      <div class="owire"><button type="button" id="fa26" class="oposs" onclick="addfltpos('fa26')"><span class="numr">26</span></button></div>
+                      <div class="owire"><button type="button" id="fa27" class="oposs" onclick="addfltpos('fa27')"><span class="numr">27</span></button></div>
+                      <div class="owire"><button type="button" id="fa28" class="oposs" onclick="addfltpos('fa28')"><span class="numr">28</span></button></div>
+                      <div class="owire"><button type="button" id="fa29" class="oposs" onclick="addfltpos('fa29')"><span class="numr">29</span></button></div>
+                  </div>
+                  <div class="out">
+                    
+                        <li id="d0" style="background-color: rgb(128, 128, 128, 0.56);">Y0</li>
+                        <li id="d1" style="background-color: rgb(128, 128, 128, 0.56);">Y1</li>
+                        <li id="d2" style="background-color: rgb(128, 128, 128, 0.56);">Y2</li>
+                        <li id="d3" style="background-color: rgb(128, 128, 128, 0.56);">Y3</li>
+                        <li id="d4" style="background-color: rgb(128, 128, 128, 0.56);">Y4</li>
+                        <li id="d5" style="background-color: rgb(128, 128, 128, 0.56);">Y5</li>
+                        <li id="d6" style="background-color: rgb(128, 128, 128, 0.56);">Y6</li>
+                        <li id="d7" style="background-color: rgb(128, 128, 128, 0.56);">Y7</li>
+                        <div style="margin: 12px 0px;"></div>
+                        <li id="d8" style="background-color: rgb(128, 128, 128, 0.56);">Y8</li>
+                        <li id="d9" style="background-color: rgb(128, 128, 128, 0.56);">Y9</li>
+                        <li id="d10" style="background-color: rgb(128, 128, 128, 0.56);">Y10</li>
+                        <li id="d11" style="background-color: rgb(128, 128, 128, 0.56);">Y11</li>
+                        <li id="d12" style="background-color: rgb(128, 128, 128, 0.56);">Y12</li>
+                        <li id="d13" style="background-color: rgb(128, 128, 128, 0.56);">Y13</li>
+                        <li id="d14" style="background-color: rgb(128, 128, 128, 0.56);">Y14</li>
+                        <li id="d15" style="background-color: rgb(128, 128, 128, 0.56);">Y15</li>
+                    
+                  </div>   
+            </div>
+           </div>
+            <div class="ttable">  
+               <div class="xbutts">
+                    <button style="width: 129px;height: auto; " onclick="reset()"> Reset</button>
+                    <button style="width: 38px; height: 40px;" onclick="ad_tab()">add</button>
+               </div>
+               <div class="faulty">
+                 <table id="tabl" rules="all">
+                 <thead>
+                   <tr style="background-color: rgb(149, 240, 149); height: 30px;">   
+                       <th style="background-color: rgb(53, 233, 53)">A0</th>
+                       <th style="background-color: rgb(53,233,53)">A1</th>
+                       <th style="background-color: rgb(53,233,53)">A2</th>
+                       <th style="background-color: rgb(53, 233, 53);">A3</th>
+                       <th>Y0</th>
+                       <th>Y1</th>
+                       <th>Y2</th>
+                       <th>Y3</th>
+                       <th>Y4</th>
+                       <th>Y5</th>
+                       <th>Y6</th>
+                       <th>Y7</th>
+                       <th>Y8</th>
+                       <th>Y9</th>
+                       <th>Y10</th>
+                       <th>Y11</th>
+                       <th>Y12</th>
+                       <th>Y13</th>
+                       <th>Y14</th>
+                       <th>Y15</th>
+                       <th>SA1 @</th>
+                      </tr>
+                  </thead>
+                  <tbody id="tbdy">
+
+                  </tbody>
+                   </table>
+               </div>
+            </div>
+            <h1><center> Normal Truth Table of 4x16 Decoder</center></h1>
+            <div><img src="images/normalTT.jpeg" alt="truth table" style="border: 2px solid #eee;width: 1000px;margin-bottom: 50px;"></div>
+        </div>
+           
+          </div>
+          </div>
+      </section>
+      <footer>
+        <span>Made with <span class="fas fa-heart"></span> by <a href="#">Group 18</a> | <span class="far fa-copyright"></span> CS203-Miniproject.</span>
+    </footer>
+      <script src="script2.js">
+      </script>
+      <!-- <script src="script.js"></script> -->
+      <script>
+       
+        //Get the button:
+        mybutton = document.getElementById("myBtn");
+        myNav = document.getElementById("Nav");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.classList.add('show')
+        myNav.classList.add('sticky')
+        } else {
+            mybutton.classList.remove('show')
+            myNav.classList.remove('sticky')
+        }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        function moveUp() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+</script>
+</body>
+</html>
