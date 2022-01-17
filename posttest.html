@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pretest</title>
+    <link
+      rel="icon"
+      href="images/18_icon_A_(Hungary).svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/25ec9fc0e1.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .prerequisite .max-width .box {
+        border: 3px solid black;
+        border-radius: 8px;
+        box-shadow: 10px 14px 10px grey;
+      }
+      .prerequisite .max-width .box h1 {
+        font-size: 35px;
+        width: 100%;
+      }
+      .prerequisite .max-width .box p {
+        font-size: 22px;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+      center {
+        padding: 20px 0 20px 0;
+      }
+      .navbar .max-width .logo a {
+        color: black;
+      }
+      .sticky .max-width .logo a {
+        color: #fff;
+      }
+      .navbar .max-width ul li a {
+        color: black;
+      }
+      .sticky .max-width ul li a {
+        color: #fff;
+      }
+      .max-width .box .heading {
+        margin: 20px auto;
+        text-align: center;
+        font-family: cursive;
+        background-image: linear-gradient(
+          to right,
+          transparent,
+          transparent,
+          #ffdde3,
+          transparent,
+          transparent
+        );
+      }
+      .max-width .box .quiz {
+        margin: auto;
+        margin-top: 2rem;
+        /* width: 70vw; */
+        display: flex;
+        flex-direction: column;
+        font-family: cursive;
+        font-size: large;
+      }
+      .max-width .box .quiz .ans {
+        display: flex;
+        flex-direction: column;
+        margin: 0.3rem 0.5rem;
+      }
+      input[type="radio"],
+      [type="checkbox"] {
+        vertical-align: middle;
+        margin: 1px 4px;
+      }
+      .box .quiz .ans label {
+        margin: 1.5px 0px;
+      }
+      .box .quiz .qsns {
+        margin: 5px 0px;
+        padding: 40px;
+      }
+      .qsns #result {
+        color: rgb(7, 52, 201);
+        margin-top: 7pxpx;
+      }
+      .qsns .subm {
+        background-color: rgb(160, 155, 155);
+        height: 2rem;
+        width: auto;
+        padding: 6px;
+        border-radius: 6px; 
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+      .box .quiz .segmentation {
+        height: 2px;
+        background-image: linear-gradient(
+          to right,
+          transparent,
+          rgb(204, 192, 255),
+          transparent
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-up-btn" id="myBtn" onclick="moveUp();">
+      <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar" id="Nav">
+      <div class="max-width">
+        <div class="logo">
+          <a href="#">CS203 Group<span>18.</span></a>
+        </div>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">Intro</a></li>
+          <li><a href="index.html#services">Report</a></li>
+          <li><a href="Prerequisite.html">Thoery</a></li>
+          <li><a href="pretest.html">Pretest</a></li>
+          <li><a href="procedure.html">Procedure</a></li>
+          <li><a href="decodersim.html">Simulation</a></li>
+          <li><a href="posttest.html">Post-test</a></li>
+          <!-- <li><a href="fault.html">Fault Finding</a></li> -->
+          <li><a href="index.html#skills">Conclusion</a></li>
+          <!-- <li><a href="#teams">Teams</a></li> -->
+          <!-- <li><a href="#contact">Contacts</a></li> -->
+        </ul>
+        <div class="menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+    <section class="prerequisite" id="prerequisite">
+      <div class="max-width">
+        <div class="box">
+          <div class="heading">
+            <h1>POST-TEST</h1>
+          </div>
+          <div class="quiz">
+            <div class="qsns">
+              <div style="font-weight: 600; font-size: 1.2rem">
+                1.For a circuit with K lines ____ single stuck at fault is possible.
+              </div>
+              <div class="ans">
+                <label id="1a"
+                  ><input
+                    type="radio"
+                    name="q1"
+                    value="a"
+                    onchange="addans(1,'a')"
+                  />K</label
+                >
+                <label id="1b"
+                  ><input
+                    type="radio"
+                    name="q1"
+                    value="b"
+                    onchange="addans(1,'b')"
+                  />2K</label
+                >
+                <label id="1c"
+                  ><input
+                    type="radio"
+                    name="q1"
+                    value="c"
+                    onchange="addans(1,'c')"
+                  />K/2</label
+                >
+                <label id="1d"
+                  ><input
+                    type="radio"
+                    name="q1"
+                    value="d"
+                    onchange="addans(1,'d')"
+                  />K^2</label
+                >
+              </div>
+            </div>
+            <div class="segmentation"></div>
+            <div class="qsns">
+              <div style="font-weight: 600; font-size: 1.2rem">
+                2.Single stuck at fault is technology independent
+              </div>
+              <div class="ans">
+                <label id="2a"
+                  ><input
+                    type="radio"
+                    name="q2"
+                    value="a"
+                    onchange="addans(2,'a')"
+                  />True</label
+                >
+                <label id="2b"
+                  ><input
+                    type="radio"
+                    name="q2"
+                    value="b"
+                    onchange="addans(2,'b')"
+                  />False</label
+                >
+                <!-- <label id="2c"
+                  ><input
+                    type="radio"
+                    name="q2"
+                    value="c"
+                    onchange="addans(2,'c')"
+                  />options</label
+                >
+                <label id="2d"
+                  ><input
+                    type="radio"
+                    name="q2"
+                    value="d"
+                    onchange="addans(2,'d')"
+                  />options</label
+                > -->
+              </div>
+            </div>
+            <div class="segmentation"></div>
+            <div class="qsns">
+              <div style="font-weight: 600; font-size: 1.2rem">
+                3.Decoder is constructed from _____
+              </div>
+              <div class="ans">
+                <label id="3a"
+                  ><input
+                    type="radio"
+                    name="q3"
+                    value="a"
+                    onchange="addans(3,'a')"
+                  />Inverters</label
+                >
+                <label id="3b"
+                  ><input
+                    type="radio"
+                    name="q3"
+                    value="b"
+                    onchange="addans(3,'b')"
+                  />AND gates</label
+                >
+                <label id="3c"
+                  ><input
+                    type="radio"
+                    name="q3"
+                    value="c"
+                    onchange="addans(3,'c')"
+                  />Both A and B</label
+                >
+                <label id="3d"
+                  ><input
+                    type="radio"
+                    name="q3"
+                    value="d"
+                    onchange="addans(3,'d')"
+                  />None of the above </label
+                >
+              </div>
+            </div>
+            <div class="segmentation"></div>
+            <div class="qsns">
+              <div style="font-weight: 600; font-size: 1.2rem">
+                4.Stuck at fault modeling comes under ______ level fault model.
+              </div>
+              <div class="ans">
+                <label id="4a"
+                  ><input
+                    type="radio"
+                    name="q4"
+                    value="a"
+                    onchange="addans(4,'a')"
+                  />Behavioral</label
+                >
+                <label id="4b"
+                  ><input
+                    type="radio"
+                    name="q4"
+                    value="b"
+                    onchange="addans(4,'b')"
+                  />Functional</label
+                >
+                <label id="4c"
+                  ><input
+                    type="radio"
+                    name="q4"
+                    value="c"
+                    onchange="addans(4,'c')"
+                  />Structural</label
+                >
+                <label id="4d"
+                  ><input
+                    type="radio"
+                    name="q4"
+                    value="d"
+                    onchange="addans(4,'d')"
+                  />Switch level</label
+                >
+              </div>
+            </div>
+            <div class="segmentation"></div>
+            <div class="qsns">
+              <div style="font-weight: 600; font-size: 1.2rem">
+                5.Fault test cases can be minimized by which of the following ?
+              </div>
+              <div class="ans">
+                <label id="5a"
+                  ><input
+                    type="radio"
+                    name="q5"
+                    value="a"
+                    onchange="addans(5,'a')"
+                  />Fault deletion</label
+                >
+                <label id="5b"
+                  ><input
+                    type="radio"
+                    name="q5"
+                    value="b"
+                    onchange="addans(5,'b')"
+                  />Fault rectification</label
+                >
+                <label id="5c"
+                  ><input
+                    type="radio"
+                    name="q5"
+                    value="c"
+                    onchange="addans(5,'c')"
+                  />Fault equivalence</label
+                >
+                <label id="5d"
+                  ><input
+                    type="radio"
+                    name="q5"
+                    value="d"
+                    onchange="addans(5,'d')"
+                  />None of the above</label
+                >
+              </div>
+              <div class="segmentation"></div>
+            </div>
+            <div class="qsns">
+              <div id="result"></div>
+              <button class="subm" onclick="fres()">submit</button>
+              <div
+                style="display: inline-block; height: 2rem; width: 26rem"
+              ></div>
+              <button class="subm" onclick="clrres()">clear response</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer Section Start  -->
+    <footer>
+      <span
+        >Made with <span class="fas fa-heart"></span> by
+        <a href="#">Group 18</a> |
+        <span class="far fa-copyright"></span> CS203-Miniproject.</span
+      >
+    </footer>
+
+    <script>
+      //Get the button:
+      mybutton = document.getElementById("myBtn");
+      myNav = document.getElementById("Nav");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.classList.add("show");
+          myNav.classList.add("sticky");
+        } else {
+          mybutton.classList.remove("show");
+          myNav.classList.remove("sticky");
+        }
+      }
+      // When the user clicks on the button, scroll to the top of the document
+      function moveUp() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+    </script>
+    <script>
+      let corans = ["b", "a", "c", "c", "a"];
+      let inpans = ["e", "e", "e", "e", "e"];
+      let score = 0,
+        clckd = false;
+      function chnclr() {
+        clckd = false;
+        for (let i = 0; i < corans.length; i++) {
+          for (let j = 1; j <= 4; j++) {
+            let str = i + 1;
+            switch (j) {
+              case 1:
+                str += "a";
+                break;
+              case 2:
+                str += "b";
+                break;
+              case 3:
+                str += "c";
+                break;
+              case 4:
+                str += "d";
+                break;
+            }
+            let op = document.getElementById(str);
+            if (op.style.color == "red") op.style.color = "black";
+          }
+        }
+      }
+      function addans(q, inp) {
+        inpans[q - 1] = inp;
+        if (clckd) chnclr();
+      }
+      function fres() {
+        clckd = true;
+        for (let i = 0; i < inpans.length; i++) {
+          if (inpans[i] == corans[i]) {
+            score++;
+          }
+          if (inpans[i] != "e" && inpans[i] != corans[i]) {
+            let str = i + 1 + inpans[i];
+            let op = document.getElementById(str);
+            op.style.color = "red";
+          }
+        }
+        let id = document.getElementById("result");
+        id.innerHTML = score + " out of 5";
+        score = 0;
+      }
+      function clrres() {
+        let id = document.getElementById("result");
+        id.innerHTML = " ";
+        score = 0;
+        for (let i = 0; i < inpans.length; i++) {
+          inpans[i] = "e";
+        }
+        chnclr();
+        let choices = document.querySelectorAll('input[type="radio"]');
+        for (const ch of choices) {
+          if (ch.checked == true) ch.checked = false;
+        }
+      }
+    </script>
+  </body>
+</html>
